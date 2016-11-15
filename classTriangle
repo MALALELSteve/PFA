@@ -1,3 +1,8 @@
+(define (sec n)
+(inexact->exact (round (* n 44100))))
+
+(define-struct note (num dur) #:transparent)
+
 (define (triangle% n)
   (class object%                     
     ;On donne accès à ces fonctions :
