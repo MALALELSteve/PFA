@@ -1,0 +1,46 @@
+(define (triangle% n)
+  (class object%                     
+    ;On donne accès à ces fonctions :
+    (public sound? getSound getColor getNumber isIgnored? playSound changeSound changeColor toggleIgnore changeDuration)
+    
+    (define number n)            ;numéro du triangle
+    (define sound null)          ;pas de son par défaut - son : structure
+    (define color "grey")        ;couleur grise
+    (define ignore? #f)          ;non ignoré
+    (define duration (sec 1))    ;durée avant de passer au triangle suivant
+    ;#######################################
+    ;RECUPERATION DES VARIABLES
+    ;Un son est-il défini?
+    (define (sound?)
+      (null? sound))
+    ;Recupérer le son
+    (define (getSound)
+      sound)
+    ;Récupérer la couleur
+    (define (getColor)
+      color)
+    ;Récupérer le numéro du triangle
+    (define (getNumber)
+      number)
+    ;Le triangle est-il ignoré? (si oui, on ne le joue pas)
+    (define (isIgnored?)
+      ignore?)
+    ;Jouer le son
+    (define (playSound)
+      (play (piano-tone (note-num sound))))
+    ;#######################################
+    ;MODIFICATION DES VARIABLES
+    ;Changer la note du triangle
+    (define (changeSound note)
+      (set! sound note))
+    ;Changer la couleur du triangle
+    (define (changeColor newcolor)
+      (set! color newcolor))
+    ;Toggle la variable bool ignore?
+    (define (toggleIgnore)
+      (set! ignore? (not ignore?)))
+    ;Changer la durée avant de passer au triangle suivant
+    (define (changeDuration dur)
+      (set! duration dur))
+    
+    (super-new)))
