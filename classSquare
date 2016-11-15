@@ -3,16 +3,16 @@
 
 (define-struct note (num dur) #:transparent)
 
-(define (triangle% n)
+(define (square% n)
   (class object%                     
     ;On donne accès à ces fonctions :
     (public sound? getSound getColor getNumber isIgnored? playSound changeSound changeColor toggleIgnore changeDuration)
     
-    (define number n)            ;numéro du triangle
+    (define number n)            ;numéro du carré
     (define sound null)          ;pas de son par défaut - son : structure
     (define color "grey")        ;couleur grise
     (define ignore? #f)          ;non ignoré
-    (define duration (sec 1))    ;durée avant de passer au triangle suivant
+    (define duration (sec 1))    ;durée avant de passer au carré suivant
     ;#######################################
     ;RECUPERATION DES VARIABLES
     ;Un son est-il défini?
@@ -24,10 +24,10 @@
     ;Récupérer la couleur
     (define (getColor)
       color)
-    ;Récupérer le numéro du triangle
+    ;Récupérer le numéro du carré
     (define (getNumber)
       number)
-    ;Le triangle est-il ignoré? (si oui, on ne le joue pas)
+    ;Le carré est-il ignoré? (si oui, on ne le joue pas)
     (define (isIgnored?)
       ignore?)
     ;Jouer le son
@@ -35,16 +35,16 @@
       (play (piano-tone (note-num sound))))
     ;#######################################
     ;MODIFICATION DES VARIABLES
-    ;Changer la note du triangle
+    ;Changer la note du carré
     (define (changeSound note)
       (set! sound note))
-    ;Changer la couleur du triangle
+    ;Changer la couleur du carré
     (define (changeColor newcolor)
       (set! color newcolor))
     ;Toggle la variable bool ignore?
     (define (toggleIgnore)
       (set! ignore? (not ignore?)))
-    ;Changer la durée avant de passer au triangle suivant
+    ;Changer la durée avant de passer au carré suivant
     (define (changeDuration dur)
       (set! duration dur))
     
