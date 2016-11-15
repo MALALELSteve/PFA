@@ -1,0 +1,4 @@
+(define (generateSquare n)
+  (if (= n 0)
+      empty
+      (cons (new (square% (- 4 n))) (generateSquare (- n 1)))))
