@@ -1,6 +1,8 @@
 Ici seront mis l'ensemble des variables globales pour utiliser le même nom dans nos algorithmes .
 
-SIZECANVAS  ;Largeur/hauteur du canvas où seront dessinés les carrés
+HEIGHTCANVAS  ;Hauteur du canvas où seront dessinés les carrés
+
+WIDTHCANVAS  ;Largeur du canvas
 
 NBSQUARE  ;Nombre d'objet créer de la classe square%
 
