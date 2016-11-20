@@ -1,0 +1,11 @@
+Ici seront mis l'ensemble des variables globales pour utiliser le même nom dans nos algorithmes .
+
+SIZECANVAS  ;Largeur/hauteur du canvas où seront dessinés les carrés
+
+NBSQUARE  ;Nombre d'objet créer de la classe square%
+
+;Les deux variables suivantes doivent être cohérente avec la valeur de nbSquare
+NBSQUAREHEIGHT  ;Nombre de carrés par colonne
+NBSQUAREWIDTH  ;Nombre de carrés par ligne
+
+LSQUARE  ;Liste de tous les objets de la classe square%
